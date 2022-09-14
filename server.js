@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express()
 
+app.use(express.static("public"))
+app.use(express.urlencoded({extended: true}))
+
 app.set('view engine', 'ejs')
 
-app.get('/', logger, logger, (req, res) => {
-    res.render("index", {surname: 'Marija'})
+app.get('/', logger, (req, res) => {
+    res.render("index", {name: 'Marija', surname: 'Ma'})
 })
 
 //app.use(logger)

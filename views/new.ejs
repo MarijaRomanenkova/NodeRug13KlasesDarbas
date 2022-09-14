@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The input element</h1>
+
+<%= locals.error || '' %>
+
+<form action="/images/new" method="post">
+  <label for="fname">Image name:</label>
+  <input type="text" name="iname" value="<%= locals.name || '' %>"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

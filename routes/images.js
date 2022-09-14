@@ -8,10 +8,20 @@ router
     res.send('Images list')
 })
 .get('/new', (req, res) => {
-    res.send('Image new')
+    res.render("new")
 })
 .get('/:id', (req, res) => {
     res.send(`Image name ${req.image.name}`)
+})
+.post('/new', (req, res) => {
+    const name = req.body.iname
+    if(name.length>1) {
+        images.push({name: req.body.iname})
+        res.redirect(`/images/${images.length -1}`)
+    }
+    else {
+        res.render('new', {name: name, error: 'Turi buti daugiau nei 1 simbolis'});
+    }
 })
 
 const images = [{name: 'Vasara'}, {name: 'Ruduo'}]
