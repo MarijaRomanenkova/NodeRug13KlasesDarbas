@@ -8,7 +8,7 @@ router
     res.send('Images list')
 })
 .get('/new', (req, res) => {
-    res.render("new")
+    res.render('new', {active: 'new'})
 })
 .get('/:id', (req, res) => {
     res.send(`Image name ${req.image.name}`)
@@ -20,7 +20,7 @@ router
         res.redirect(`/images/${images.length -1}`)
     }
     else {
-        res.render('new', {name: name, error: 'Turi buti daugiau nei 1 simbolis'});
+        res.render('new', {name: name, error: 'Turi buti daugiau nei 1 simbolis', 'active' : 'new'});
     }
 })
 

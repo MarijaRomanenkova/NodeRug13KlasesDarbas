@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html>
+<%- include('./partials/head') %>
 <body>
+    <%- include('./partials/navbar') %>
+    <h1>The input element</h1>
 
-<h1>The input element</h1>
-
-<%= locals.error || '' %>
-
-<form action="/images/new" method="post">
-  <label for="fname">Image name:</label>
-  <input type="text" name="iname" value="<%= locals.name || '' %>"><br><br>
-  <input type="submit" value="Submit">
-</form>
-
+    <%= locals.error || '' %>
+    <form action="/images/new" method="post">
+      <label for="fname">Image name:</label>
+      <input type="text" name="iname" value="<%= locals.name || '' %>"><br><br>
+      <input type="submit" value="Submit">
+    </form>
 </body>
 </html>

@@ -1,12 +1,8 @@
-<!doctype html>
-<html>
-<head>
-<title>Our Funky HTML Page</title>
-<meta name="description" content="Our first page">
-<meta name="keywords" content="html tutorial template">
-</head>
+<%- include('./partials/head') %>
 <body>
-    
-Labas vakaras, <%= locals.name || 'No name' %> <%= locals.surname || 'No name' %> 
+    <%- include('./partials/navbar') %>
+    <div>
+        <%= name %>
+    </div>
 </body>
 </html>
